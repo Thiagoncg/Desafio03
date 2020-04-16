@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   async function handleAddRepository() {
-    // TODO
+    // TODO Adiciona repositorios na lista
     const response = await api.post('repositories', {
       url: "http://www.criargames.com.br",
       title: "Desafio 3 - Repositório 1",
@@ -27,14 +27,21 @@ function App() {
   }
 
   async function handleRemoveRepository(id) {
-    // TODO
+    // TODO deleta repositorios da lista
+    try {
+      await api.delete(`repositories/${id}`);
+      alert('repositorio deletados com sucesso', repositories.id)
+
+    } catch (err) {
+      alert('Erro ao deletar repositorio.');
+    }
   }
 
   return (
     <div>
       <h1>LISTA DE REPOSITÓRIOS</h1>
       <ul data-testid="repository-list">
-          {repositories.map(repositorie => <li key={repositorie.id}> {repositorie.title} <button onClick={() => handleRemoveRepository(1)}>dell</button> </li>)}
+        {repositories.map(repositorie => <li key={repositorie.id}> {repositorie.title} <button onClick={() => handleRemoveRepository(repositorie.id)}>dell</button> </li>)}
       </ul>
 
       <button onClick={handleAddRepository}>Adicionar</button>
