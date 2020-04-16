@@ -28,6 +28,8 @@ function App() {
 
   async function handleRemoveRepository(id) {
     // TODO deleta repositorios da lista
+
+
     try {
       await api.delete(`repositories/${id}`);
       alert('repositorio deletados com sucesso', repositories.id);
