@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 body {
@@ -10,8 +12,26 @@ body {
 }
 
 div {
+  display: flex;
+  flex-direction:  column;
+
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin: 20px;
+}
+
+h1 {
+  margin-bottom: 32px;
+  color: #ffffff;
+
+  font-weight: 400;
+  font-size: 18px;
+  background: #9e84fa;
+  width: 100%;
+
+  text-align: center;
+  padding: 20px;
 }
 
 div li {

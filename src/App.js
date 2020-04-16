@@ -16,7 +16,7 @@ function App() {
     // TODO
     const response = await api.post('repositories', {
       url: "http://www.criargames.com.br",
-      title: "Desafio 3",
+      title: "Desafio 3 - Repositório 1",
       techs: ['teste', 'teste', 'teste'],
       likes: 0,
     })
@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div>
+      <h1>LISTA DE REPOSITÓRIOS</h1>
       <ul data-testid="repository-list">
           {repositories.map(repositorie => <li key={repositorie.id}> {repositorie.title} <button onClick={() => handleRemoveRepository(1)}>dell</button> </li>)}
       </ul>
