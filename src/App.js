@@ -30,7 +30,10 @@ function App() {
     // TODO deleta repositorios da lista
     try {
       await api.delete(`repositories/${id}`);
-      alert('repositorio deletados com sucesso', repositories.id)
+      alert('repositorio deletados com sucesso', repositories.id);
+
+      setRepositories(repositories.filter(repositorie => repositorie.id !== id));
+
 
     } catch (err) {
       alert('Erro ao deletar repositorio.');
